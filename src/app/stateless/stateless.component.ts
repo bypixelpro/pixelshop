@@ -1,11 +1,12 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { Product } from '../interface/product';
 
 
 @Component({
   selector: 'app-stateless',
   templateUrl: './stateless.component.html',
-  styleUrls: ['./stateless.component.css']
+  styleUrls: ['./stateless.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class StatelessComponent implements OnInit {
 
@@ -27,7 +28,8 @@ export class StatelessComponent implements OnInit {
     this.cursomatriculado.emit(this.product);
   }
   isDisabled() {
-    return !!this.disable;
+    console.log(this.product.title);
+    return this.disable;
   }
 
 }
