@@ -43,6 +43,7 @@ export class StatefulComponent implements OnInit, OnDestroy {
  }
  cursoMatriculado(_event: Product) {
    this.clickItem(_event);
+   this.onConfirm();
    this.confirmChild.isDisabled = false;
  }
 
@@ -53,4 +54,9 @@ export class StatefulComponent implements OnInit, OnDestroy {
    );
  }
 }
+
+onConfirm() {
+  alert('Has añadido un nuevo curso');
+}
+
 }

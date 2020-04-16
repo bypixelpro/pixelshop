@@ -20,6 +20,11 @@
             </li>
             </ul>
             <app-confirm></app-confirm>
+            <app-status-cart
+            [price]="finalPrice()"
+            [shopModel]="shopModel.shopItems"
+            (add)="onConfirm()"
+            ></app-status-cart>
       </main><!-- /.container -->
 
 
